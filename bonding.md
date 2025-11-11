@@ -2,6 +2,10 @@
 ### 1. 사전확인 
 ```
 nmcli device status
+
+sudo nmcli connection down ens3f0       //network IP 주소가 할당되어있으면 네트워크 down
+
+sudo nmcli connection delete ens3f0       //연결 프로파일 삭제 IP설정 완전 제거
 ```
 
 ### 2. 본딩 인터페이스 생성
