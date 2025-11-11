@@ -46,3 +46,12 @@ nmcli device status      // 상태확인
 cat /proc/net/bonding/bond0       // bond0에 ens3f2가 추가되었는지 확인
 ```
 
+### 7. Bonding Mode 변경
+```
+sudo nmcli connection modify bond-bond0 bond.options "mode=802.3ad,xmit_hash_policy=layer3+4"       //mode는 사용하고 싶은 mode를 찾아서 쓰면 됨.
+
+sudo nmcli connection down bond-bond0
+sudo nmcli connection up bond-bond0       //bonding 재시작
+
+cat /proc/net/bonding/bond0       //본딩 확인
+```
