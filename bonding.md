@@ -32,3 +32,13 @@ nmcli connection up bond-slave-ens3f1
 ```
 cat /proc/net/bonding/bond0
 ```
+
+### 6. Bonding 추가
+```
+sudo nmcli connection add type ethernet ifname ens3f2 master bond0
+sudo nmcli connection up bond-slave-ens3f2
+
+nmcli device status      // 상태확인
+cat /proc/net/bonding/bond0       // bond0에 ens3f2가 추가되었는지 확인
+```
+
